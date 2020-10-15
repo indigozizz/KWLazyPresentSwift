@@ -93,26 +93,34 @@ class ViewController: UIViewController {
     @objc func notificationButtonClick()
     {
         //TODO
+        
     }
     
     @objc func alertButtonClick()
     {
-        //TODO
+        lazyAlert("Show Alert")
     }
     
     @objc func showButtonClick()
     {
-        //TODO
+        let viewController = ViewController()
+        viewController.modalPresentationStyle = .overCurrentContext
+        
+        viewController.lazyPresent(animated: true) {
+            print("lazyPresentCompletion")
+        }
     }
     
     @objc func dismissButtonClick()
     {
-        //TODO
+        self.lazyDismiss(animated: true) {
+            print("lazyDismissCompletion")
+        }
     }
     
     @objc func logButtonClick()
     {
-        //TODO
+        print("logButtonClick")
     }
 }
 

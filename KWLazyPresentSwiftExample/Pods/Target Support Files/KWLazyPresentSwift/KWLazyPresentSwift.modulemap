@@ -1,0 +1,6 @@
+framework module KWLazyPresentSwift {
+  umbrella header "KWLazyPresentSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
