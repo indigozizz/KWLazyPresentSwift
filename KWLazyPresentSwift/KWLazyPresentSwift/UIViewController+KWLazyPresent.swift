@@ -7,12 +7,12 @@
 
 import UIKit
 
-enum KWLazyPresentType {
+public enum KWLazyPresentType {
     case defaultStyle
     case inAppNotification
 }
 
-typealias completion = () -> Void
+public typealias completion = () -> Void
 
 //MARK: - Private Extention (AssociatedKeys)
 extension UIViewController {
@@ -33,7 +33,7 @@ extension UIViewController {
 //MARK: - KWLazyPresent Extention
 extension UIViewController {
 
-    func lazyPresent(animated: Bool = true, alertType: KWLazyPresentType = .defaultStyle, completion: completion? = nil) {
+    public func lazyPresent(animated: Bool = true, alertType: KWLazyPresentType = .defaultStyle, completion: completion? = nil) {
 
         self.alertWindow = KWWindow(frame: UIScreen.main.bounds)
         
@@ -77,7 +77,7 @@ extension UIViewController {
     }
     
     
-    func lazyDismiss(animated: Bool = true, completion: completion? = nil) {
+    public func lazyDismiss(animated: Bool = true, completion: completion? = nil) {
         
         self.dismiss(animated: animated) {
             self.alertWindow?.isHidden = true
@@ -89,7 +89,7 @@ extension UIViewController {
         }
     }
     
-    func lazyAlert(_ message: String) {
+    public func lazyAlert(_ message: String) {
         let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
         
         let action = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
