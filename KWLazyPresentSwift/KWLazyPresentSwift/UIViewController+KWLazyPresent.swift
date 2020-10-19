@@ -20,7 +20,7 @@ extension UIViewController {
         static var kwPresentWindow = "kwPresentWindow"
     }
     
-    var alertWindow: KWWindow? {
+    var kwPresentWindow: KWWindow? {
         get {
             return getAssociated(associatedKey: &AssociatedKeys.kwPresentWindow)
         }
@@ -34,24 +34,31 @@ extension UIViewController {
 extension UIViewController {
 
     public func lazyPresent(animated: Bool = true, alertType: KWLazyPresentType = .defaultStyle, completion: completion? = nil) {
-
-        self.alertWindow = KWWindow(frame: UIScreen.main.bounds)
-        
-        self.alertWindow?.rootViewController = UIViewController()
         
         var window: UIWindow?
-        
+                
         if #available(iOS 13.0, *) {
-            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
-              return
+            let windowScene = UIApplication.shared
+                            .connectedScenes
+                            .filter { $0.activationState == .foregroundActive }
+                            .first
+            if let windowScene = windowScene as? UIWindowScene {
+                
+                window = windowScene.windows.first
+                
+                kwPresentWindow = KWWindow(windowScene: windowScene)
+                kwPresentWindow?.frame = UIScreen.main.bounds
             }
-            
-            window = windowScene.windows.first
         }
+        
+        if (kwPresentWindow == nil) {
+            kwPresentWindow = KWWindow(frame: UIScreen.main.bounds)
+        }
+        
+        self.kwPresentWindow?.rootViewController = UIViewController()
         
         if (window == nil) {
             print("Window not found in SceneDelegate")
-            //window = (UIApplication.shared.delegate?.window)!
             window = UIApplication.shared.windows.first
         }
         
@@ -60,28 +67,28 @@ extension UIViewController {
         }
         
         if let window = window {
-            self.alertWindow?.tintColor = window.tintColor
+            self.kwPresentWindow?.tintColor = window.tintColor
         }
         
         
         switch alertType {
-        case .defaultStyle:
-            self.alertWindow?.windowLevel = UIWindow.Level.alert - 1
         case .inAppNotification:
-            self.alertWindow?.windowLevel = kwGetSuitableWindowLevel()
+            self.kwPresentWindow?.windowLevel = UIWindow.Level.alert - 1
             
+        case .defaultStyle:
+            self.kwPresentWindow?.windowLevel = kwGetSuitableWindowLevel()
         }
         
-        self.alertWindow?.makeKeyAndVisible()
-        self.alertWindow?.rootViewController?.present(self, animated: animated, completion: completion)
+        self.kwPresentWindow?.makeKeyAndVisible()
+        self.kwPresentWindow?.rootViewController?.present(self, animated: animated, completion: completion)
     }
     
     
     public func lazyDismiss(animated: Bool = true, completion: completion? = nil) {
         
         self.dismiss(animated: animated) {
-            self.alertWindow?.isHidden = true
-            self.alertWindow = nil
+            self.kwPresentWindow?.isHidden = true
+            self.kwPresentWindow = nil
             
             if let completion = completion {
                 completion()

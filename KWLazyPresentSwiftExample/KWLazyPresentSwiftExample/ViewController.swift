@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  KWLazyPresentSwiftExample
 //
-//  Created by Kawa on 2020/10/15.
+//  Created by Kawa on 2020/10/19.
 //
 
 import UIKit
@@ -11,11 +11,11 @@ import KWLazyPresentSwift
 class ViewController: UIViewController {
     
     let windowCountLabel = UILabel()
-    let notificationButton = UIButton()
-    let alertButton = UIButton()
-    let showButton = UIButton()
-    let dismissButton = UIButton()
-    let logButton = UIButton()
+    let notificationButton = UIButton.init(type: .system)
+    let alertButton = UIButton.init(type: .system)
+    let showButton = UIButton.init(type: .system)
+    let dismissButton = UIButton.init(type: .system)
+    let logButton = UIButton.init(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,19 +56,19 @@ class ViewController: UIViewController {
         showButton.frame = CGRect(x: 0, y: 0, width: 180, height: 60)
         showButton.setTitle("Present ViewController", for: .normal)
         showButton.setTitleColor(UIColor.black, for: .normal)
-        showButton.backgroundColor = UIColor.gray
+        showButton.backgroundColor = UIColor.green
         showButton.addTarget(self, action: #selector(showButtonClick), for: .touchUpInside)
         
         dismissButton.frame = CGRect(x: 0, y: 0, width: 180, height: 60)
         dismissButton.setTitle("Dismiss", for: .normal)
         dismissButton.setTitleColor(UIColor.black, for: .normal)
-        dismissButton.backgroundColor = UIColor.gray
+        dismissButton.backgroundColor = UIColor.red
         dismissButton.addTarget(self, action: #selector(dismissButtonClick), for: .touchUpInside)
         
         logButton.frame = CGRect(x: 0, y: 0, width: 180, height: 60)
         logButton.setTitle("Print Log", for: .normal)
-        logButton.setTitleColor(UIColor.black, for: .normal)
-        logButton.backgroundColor = UIColor.gray
+        logButton.setTitleColor(UIColor.white, for: .normal)
+        logButton.backgroundColor = UIColor.black
         logButton.addTarget(self, action: #selector(logButtonClick), for: .touchUpInside)
         
         
@@ -83,6 +83,7 @@ class ViewController: UIViewController {
         logButton.center = CGPoint(x: self.view.center.x, y: self.view.center.y + 140)
         
         
+        self.view.addSubview(windowCountLabel)
         self.view.addSubview(notificationButton)
         self.view.addSubview(alertButton)
         self.view.addSubview(showButton)
@@ -92,8 +93,12 @@ class ViewController: UIViewController {
     
     @objc func notificationButtonClick()
     {
-        //TODO
+        let viewController = NotificationViewController()
+        viewController.modalPresentationStyle = .overCurrentContext
         
+        viewController.lazyPresent(animated: false, alertType: .inAppNotification) {
+            print("lazyPresentCompletion (Notification)")
+        }
     }
     
     @objc func alertButtonClick()
@@ -138,3 +143,5 @@ extension CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 }
+
+

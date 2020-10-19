@@ -7,103 +7,162 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52BA82A42538428700FA15A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA82A32538428700FA15A5 /* AppDelegate.swift */; };
-		52BA82A62538428700FA15A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA82A52538428700FA15A5 /* SceneDelegate.swift */; };
-		52BA82A82538428700FA15A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA82A72538428700FA15A5 /* ViewController.swift */; };
-		52BA82AB2538428700FA15A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BA82A92538428700FA15A5 /* Main.storyboard */; };
-		52BA82AD2538428700FA15A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BA82AC2538428700FA15A5 /* Assets.xcassets */; };
-		52BA82B02538428700FA15A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BA82AE2538428700FA15A5 /* LaunchScreen.storyboard */; };
-		83C3E867BCE71AD53E54C9A5 /* Pods_KWLazyPresentSwiftExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB460194487EF2BF66880942 /* Pods_KWLazyPresentSwiftExample.framework */; };
+		52216621253D48610012048F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52216620253D48610012048F /* AppDelegate.swift */; };
+		52216623253D48610012048F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52216622253D48610012048F /* SceneDelegate.swift */; };
+		52216625253D48610012048F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52216624253D48610012048F /* ViewController.swift */; };
+		52216628253D48610012048F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52216626253D48610012048F /* Main.storyboard */; };
+		5221662A253D48620012048F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52216629253D48620012048F /* Assets.xcassets */; };
+		5221662D253D48620012048F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5221662B253D48620012048F /* LaunchScreen.storyboard */; };
+		52216666253D48C40012048F /* KWLazyPresentSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52216665253D48C00012048F /* KWLazyPresentSwift.framework */; };
+		52216667253D48C40012048F /* KWLazyPresentSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52216665253D48C00012048F /* KWLazyPresentSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5221666E253D4BFB0012048F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5221666D253D4BFB0012048F /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		52216664253D48C00012048F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52216654253D48C00012048F /* KWLazyPresentSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52E24BB525381172002ADB08;
+			remoteInfo = KWLazyPresentSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		52216650253D48AB0012048F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				52216667253D48C40012048F /* KWLazyPresentSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		2593853E3E60CD94B403D5E6 /* Pods-KWLazyPresentSwiftExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWLazyPresentSwiftExample.release.xcconfig"; path = "Target Support Files/Pods-KWLazyPresentSwiftExample/Pods-KWLazyPresentSwiftExample.release.xcconfig"; sourceTree = "<group>"; };
-		52BA82A02538428700FA15A5 /* KWLazyPresentSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KWLazyPresentSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		52BA82A32538428700FA15A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52BA82A52538428700FA15A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		52BA82A72538428700FA15A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		52BA82AA2538428700FA15A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		52BA82AC2538428700FA15A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		52BA82AF2538428700FA15A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		52BA82B12538428700FA15A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A55741297491A5BB86F5A69E /* Pods-KWLazyPresentSwiftExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KWLazyPresentSwiftExample.debug.xcconfig"; path = "Target Support Files/Pods-KWLazyPresentSwiftExample/Pods-KWLazyPresentSwiftExample.debug.xcconfig"; sourceTree = "<group>"; };
-		CB460194487EF2BF66880942 /* Pods_KWLazyPresentSwiftExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KWLazyPresentSwiftExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5221661D253D48610012048F /* KWLazyPresentSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KWLazyPresentSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52216620253D48610012048F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52216622253D48610012048F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		52216624253D48610012048F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52216627253D48610012048F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52216629253D48620012048F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5221662C253D48620012048F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5221662E253D48620012048F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52216653253D48C00012048F /* KWLazyPresentSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = KWLazyPresentSwift.podspec; sourceTree = "<group>"; };
+		52216654253D48C00012048F /* KWLazyPresentSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = KWLazyPresentSwift.xcodeproj; sourceTree = "<group>"; };
+		52216658253D48C00012048F /* KWPassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KWPassthroughView.swift; sourceTree = "<group>"; };
+		5221665A253D48C00012048F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5221665B253D48C00012048F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5221665C253D48C00012048F /* KWWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KWWindow.swift; sourceTree = "<group>"; };
+		5221665D253D48C00012048F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5221665E253D48C00012048F /* NSObject+Associated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Associated.swift"; sourceTree = "<group>"; };
+		5221665F253D48C00012048F /* KWLazyPresentSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KWLazyPresentSwift.h; sourceTree = "<group>"; };
+		52216660253D48C00012048F /* UIViewController+KWLazyPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KWLazyPresent.swift"; sourceTree = "<group>"; };
+		52216661253D48C00012048F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52216662253D48C00012048F /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		5221666D253D4BFB0012048F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		52BA829D2538428700FA15A5 /* Frameworks */ = {
+		5221661A253D48610012048F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83C3E867BCE71AD53E54C9A5 /* Pods_KWLazyPresentSwiftExample.framework in Frameworks */,
+				52216666253D48C40012048F /* KWLazyPresentSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A72E6D53A7B03D74588E15A /* Pods */ = {
+		52216614253D48610012048F = {
 			isa = PBXGroup;
 			children = (
-				A55741297491A5BB86F5A69E /* Pods-KWLazyPresentSwiftExample.debug.xcconfig */,
-				2593853E3E60CD94B403D5E6 /* Pods-KWLazyPresentSwiftExample.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		52BA82972538428700FA15A5 = {
-			isa = PBXGroup;
-			children = (
-				52BA82A22538428700FA15A5 /* KWLazyPresentSwiftExample */,
-				52BA82A12538428700FA15A5 /* Products */,
-				1A72E6D53A7B03D74588E15A /* Pods */,
-				7A4E8E0447EEEF22CA2E6F36 /* Frameworks */,
+				5221661F253D48610012048F /* KWLazyPresentSwiftExample */,
+				5221661E253D48610012048F /* Products */,
+				52216651253D48C00012048F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		52BA82A12538428700FA15A5 /* Products */ = {
+		5221661E253D48610012048F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				52BA82A02538428700FA15A5 /* KWLazyPresentSwiftExample.app */,
+				5221661D253D48610012048F /* KWLazyPresentSwiftExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		52BA82A22538428700FA15A5 /* KWLazyPresentSwiftExample */ = {
+		5221661F253D48610012048F /* KWLazyPresentSwiftExample */ = {
 			isa = PBXGroup;
 			children = (
-				52BA82A32538428700FA15A5 /* AppDelegate.swift */,
-				52BA82A52538428700FA15A5 /* SceneDelegate.swift */,
-				52BA82A72538428700FA15A5 /* ViewController.swift */,
-				52BA82A92538428700FA15A5 /* Main.storyboard */,
-				52BA82AC2538428700FA15A5 /* Assets.xcassets */,
-				52BA82AE2538428700FA15A5 /* LaunchScreen.storyboard */,
-				52BA82B12538428700FA15A5 /* Info.plist */,
+				52216620253D48610012048F /* AppDelegate.swift */,
+				52216622253D48610012048F /* SceneDelegate.swift */,
+				5221666D253D4BFB0012048F /* NotificationViewController.swift */,
+				52216624253D48610012048F /* ViewController.swift */,
+				52216626253D48610012048F /* Main.storyboard */,
+				52216629253D48620012048F /* Assets.xcassets */,
+				5221662B253D48620012048F /* LaunchScreen.storyboard */,
+				5221662E253D48620012048F /* Info.plist */,
 			);
 			path = KWLazyPresentSwiftExample;
 			sourceTree = "<group>";
 		};
-		7A4E8E0447EEEF22CA2E6F36 /* Frameworks */ = {
+		52216651253D48C00012048F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CB460194487EF2BF66880942 /* Pods_KWLazyPresentSwiftExample.framework */,
+				52216652253D48C00012048F /* KWLazyPresentSwift */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52216652253D48C00012048F /* KWLazyPresentSwift */ = {
+			isa = PBXGroup;
+			children = (
+				52216653253D48C00012048F /* KWLazyPresentSwift.podspec */,
+				52216654253D48C00012048F /* KWLazyPresentSwift.xcodeproj */,
+				52216657253D48C00012048F /* KWLazyPresentSwift */,
+				52216662253D48C00012048F /* Podfile */,
+			);
+			name = KWLazyPresentSwift;
+			path = ../KWLazyPresentSwift;
+			sourceTree = "<group>";
+		};
+		52216655253D48C00012048F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52216665253D48C00012048F /* KWLazyPresentSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52216657253D48C00012048F /* KWLazyPresentSwift */ = {
+			isa = PBXGroup;
+			children = (
+				52216658253D48C00012048F /* KWPassthroughView.swift */,
+				52216659253D48C00012048F /* Localizable.strings */,
+				5221665C253D48C00012048F /* KWWindow.swift */,
+				5221665E253D48C00012048F /* NSObject+Associated.swift */,
+				5221665F253D48C00012048F /* KWLazyPresentSwift.h */,
+				52216660253D48C00012048F /* UIViewController+KWLazyPresent.swift */,
+				52216661253D48C00012048F /* Info.plist */,
+			);
+			path = KWLazyPresentSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		52BA829F2538428700FA15A5 /* KWLazyPresentSwiftExample */ = {
+		5221661C253D48610012048F /* KWLazyPresentSwiftExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52BA82B42538428700FA15A5 /* Build configuration list for PBXNativeTarget "KWLazyPresentSwiftExample" */;
+			buildConfigurationList = 52216631253D48620012048F /* Build configuration list for PBXNativeTarget "KWLazyPresentSwiftExample" */;
 			buildPhases = (
-				1A659F9DFC155CC879370BC1 /* [CP] Check Pods Manifest.lock */,
-				52BA829C2538428700FA15A5 /* Sources */,
-				52BA829D2538428700FA15A5 /* Frameworks */,
-				52BA829E2538428700FA15A5 /* Resources */,
-				1D5FAA31AFDB60139A2B802C /* [CP] Embed Pods Frameworks */,
+				52216619253D48610012048F /* Sources */,
+				5221661A253D48610012048F /* Frameworks */,
+				5221661B253D48610012048F /* Resources */,
+				52216650253D48AB0012048F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -111,130 +170,117 @@
 			);
 			name = KWLazyPresentSwiftExample;
 			productName = KWLazyPresentSwiftExample;
-			productReference = 52BA82A02538428700FA15A5 /* KWLazyPresentSwiftExample.app */;
+			productReference = 5221661D253D48610012048F /* KWLazyPresentSwiftExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		52BA82982538428700FA15A5 /* Project object */ = {
+		52216615253D48610012048F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					52BA829F2538428700FA15A5 = {
+					5221661C253D48610012048F = {
 						CreatedOnToolsVersion = 12.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 52BA829B2538428700FA15A5 /* Build configuration list for PBXProject "KWLazyPresentSwiftExample" */;
+			buildConfigurationList = 52216618253D48610012048F /* Build configuration list for PBXProject "KWLazyPresentSwiftExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
-			mainGroup = 52BA82972538428700FA15A5;
-			productRefGroup = 52BA82A12538428700FA15A5 /* Products */;
+			mainGroup = 52216614253D48610012048F;
+			productRefGroup = 5221661E253D48610012048F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 52216655253D48C00012048F /* Products */;
+					ProjectRef = 52216654253D48C00012048F /* KWLazyPresentSwift.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
-				52BA829F2538428700FA15A5 /* KWLazyPresentSwiftExample */,
+				5221661C253D48610012048F /* KWLazyPresentSwiftExample */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		52216665253D48C00012048F /* KWLazyPresentSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = KWLazyPresentSwift.framework;
+			remoteRef = 52216664253D48C00012048F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
-		52BA829E2538428700FA15A5 /* Resources */ = {
+		5221661B253D48610012048F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52BA82B02538428700FA15A5 /* LaunchScreen.storyboard in Resources */,
-				52BA82AD2538428700FA15A5 /* Assets.xcassets in Resources */,
-				52BA82AB2538428700FA15A5 /* Main.storyboard in Resources */,
+				5221662D253D48620012048F /* LaunchScreen.storyboard in Resources */,
+				5221662A253D48620012048F /* Assets.xcassets in Resources */,
+				52216628253D48610012048F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1A659F9DFC155CC879370BC1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KWLazyPresentSwiftExample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1D5FAA31AFDB60139A2B802C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KWLazyPresentSwiftExample/Pods-KWLazyPresentSwiftExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KWLazyPresentSwiftExample/Pods-KWLazyPresentSwiftExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KWLazyPresentSwiftExample/Pods-KWLazyPresentSwiftExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		52BA829C2538428700FA15A5 /* Sources */ = {
+		52216619253D48610012048F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52BA82A82538428700FA15A5 /* ViewController.swift in Sources */,
-				52BA82A42538428700FA15A5 /* AppDelegate.swift in Sources */,
-				52BA82A62538428700FA15A5 /* SceneDelegate.swift in Sources */,
+				52216625253D48610012048F /* ViewController.swift in Sources */,
+				52216621253D48610012048F /* AppDelegate.swift in Sources */,
+				5221666E253D4BFB0012048F /* NotificationViewController.swift in Sources */,
+				52216623253D48610012048F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		52BA82A92538428700FA15A5 /* Main.storyboard */ = {
+		52216626253D48610012048F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				52BA82AA2538428700FA15A5 /* Base */,
+				52216627253D48610012048F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		52BA82AE2538428700FA15A5 /* LaunchScreen.storyboard */ = {
+		5221662B253D48620012048F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				52BA82AF2538428700FA15A5 /* Base */,
+				5221662C253D48620012048F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		52216659253D48C00012048F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5221665A253D48C00012048F /* zh-Hans */,
+				5221665B253D48C00012048F /* en */,
+				5221665D253D48C00012048F /* zh-Hant */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		52BA82B22538428700FA15A5 /* Debug */ = {
+		5221662F253D48620012048F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -285,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -295,7 +341,7 @@
 			};
 			name = Debug;
 		};
-		52BA82B32538428700FA15A5 /* Release */ = {
+		52216630253D48620012048F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -340,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -350,9 +396,8 @@
 			};
 			name = Release;
 		};
-		52BA82B52538428700FA15A5 /* Debug */ = {
+		52216632253D48620012048F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A55741297491A5BB86F5A69E /* Pods-KWLazyPresentSwiftExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -370,9 +415,8 @@
 			};
 			name = Debug;
 		};
-		52BA82B62538428700FA15A5 /* Release */ = {
+		52216633253D48620012048F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2593853E3E60CD94B403D5E6 /* Pods-KWLazyPresentSwiftExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -393,25 +437,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		52BA829B2538428700FA15A5 /* Build configuration list for PBXProject "KWLazyPresentSwiftExample" */ = {
+		52216618253D48610012048F /* Build configuration list for PBXProject "KWLazyPresentSwiftExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52BA82B22538428700FA15A5 /* Debug */,
-				52BA82B32538428700FA15A5 /* Release */,
+				5221662F253D48620012048F /* Debug */,
+				52216630253D48620012048F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52BA82B42538428700FA15A5 /* Build configuration list for PBXNativeTarget "KWLazyPresentSwiftExample" */ = {
+		52216631253D48620012048F /* Build configuration list for PBXNativeTarget "KWLazyPresentSwiftExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52BA82B52538428700FA15A5 /* Debug */,
-				52BA82B62538428700FA15A5 /* Release */,
+				52216632253D48620012048F /* Debug */,
+				52216633253D48620012048F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 52BA82982538428700FA15A5 /* Project object */;
+	rootObject = 52216615253D48610012048F /* Project object */;
 }

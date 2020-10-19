@@ -7,7 +7,7 @@
 
 import UIKit
 
-class KWPassthroughView: UIView {
+public class KWPassthroughView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
