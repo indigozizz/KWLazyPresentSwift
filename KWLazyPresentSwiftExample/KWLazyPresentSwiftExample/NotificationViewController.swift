@@ -113,7 +113,8 @@ class NotificationViewController: UIViewController {
             self.notificationView.frame = self.hideFrame
         } completion: { (finished) in
             self.notificationView.removeFromSuperview()
-            self.lazyDismiss(animated: false, completion: nil)
+            //self.lazyDismiss(animated: false, completion: nil)
+            self.dismiss(animated: false, completion: nil)
         }
     }
 

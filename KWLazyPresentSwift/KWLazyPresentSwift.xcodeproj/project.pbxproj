@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52038CBA26E7150B001E8203 /* KWLazyPresentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52038CB926E7150B001E8203 /* KWLazyPresentHelper.swift */; };
+		525D10A126E4744300E3A906 /* UIViewController+LazyPresentDealloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 525D109F26E4744300E3A906 /* UIViewController+LazyPresentDealloc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		525D10A226E4744300E3A906 /* UIViewController+LazyPresentDealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D10A026E4744300E3A906 /* UIViewController+LazyPresentDealloc.m */; };
 		52E24BBA25381172002ADB08 /* KWLazyPresentSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 52E24BB825381172002ADB08 /* KWLazyPresentSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52E24BC225381259002ADB08 /* UIViewController+KWLazyPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E24BC125381259002ADB08 /* UIViewController+KWLazyPresent.swift */; };
 		52E24BCA253813AC002ADB08 /* KWWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E24BC9253813AC002ADB08 /* KWWindow.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52038CB926E7150B001E8203 /* KWLazyPresentHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KWLazyPresentHelper.swift; sourceTree = "<group>"; };
+		525D109F26E4744300E3A906 /* UIViewController+LazyPresentDealloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LazyPresentDealloc.h"; sourceTree = "<group>"; };
+		525D10A026E4744300E3A906 /* UIViewController+LazyPresentDealloc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LazyPresentDealloc.m"; sourceTree = "<group>"; };
 		52E24BB525381172002ADB08 /* KWLazyPresentSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KWLazyPresentSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E24BB825381172002ADB08 /* KWLazyPresentSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KWLazyPresentSwift.h; sourceTree = "<group>"; };
 		52E24BB925381172002ADB08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,12 +64,15 @@
 		52E24BB725381172002ADB08 /* KWLazyPresentSwift */ = {
 			isa = PBXGroup;
 			children = (
+				52038CB926E7150B001E8203 /* KWLazyPresentHelper.swift */,
 				52E24BCF25381612002ADB08 /* NSObject+Associated.swift */,
 				52E24BC125381259002ADB08 /* UIViewController+KWLazyPresent.swift */,
 				52E24BB825381172002ADB08 /* KWLazyPresentSwift.h */,
 				52E24BB925381172002ADB08 /* Info.plist */,
 				52E24BC9253813AC002ADB08 /* KWWindow.swift */,
 				52E24BCC25381422002ADB08 /* KWPassthroughView.swift */,
+				525D109F26E4744300E3A906 /* UIViewController+LazyPresentDealloc.h */,
+				525D10A026E4744300E3A906 /* UIViewController+LazyPresentDealloc.m */,
 				52E24BD9253826B9002ADB08 /* Localizable.strings */,
 			);
 			path = KWLazyPresentSwift;
@@ -76,6 +85,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525D10A126E4744300E3A906 /* UIViewController+LazyPresentDealloc.h in Headers */,
 				52E24BBA25381172002ADB08 /* KWLazyPresentSwift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,7 +121,7 @@
 				TargetAttributes = {
 					52E24BB425381172002ADB08 = {
 						CreatedOnToolsVersion = 12.0.1;
-						LastSwiftMigration = 1200;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -152,8 +162,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E24BC225381259002ADB08 /* UIViewController+KWLazyPresent.swift in Sources */,
+				52038CBA26E7150B001E8203 /* KWLazyPresentHelper.swift in Sources */,
 				52E24BCD25381422002ADB08 /* KWPassthroughView.swift in Sources */,
 				52E24BCA253813AC002ADB08 /* KWWindow.swift in Sources */,
+				525D10A226E4744300E3A906 /* UIViewController+LazyPresentDealloc.m in Sources */,
 				52E24BD025381612002ADB08 /* NSObject+Associated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +330,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -346,6 +359,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -7,6 +7,11 @@
 
 #import <Foundation/Foundation.h>
 
+//[Reference] https://stackoverflow.com/questions/24875745/xcode-6-beta-4-using-bridging-headers-with-framework-targets-is-unsupported
+
+//[Reference] https://stackoverflow.com/questions/38800435/can-i-use-an-objective-c-class-in-my-swift-framework-library
+#import "UIViewController+LazyPresentDealloc.h"
+
 //! Project version number for KWLazyPresentSwift.
 FOUNDATION_EXPORT double KWLazyPresentSwiftVersionNumber;
 

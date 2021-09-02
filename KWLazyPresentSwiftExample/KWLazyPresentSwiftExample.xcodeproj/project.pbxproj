@@ -141,13 +141,13 @@
 		52216657253D48C00012048F /* KWLazyPresentSwift */ = {
 			isa = PBXGroup;
 			children = (
-				52216658253D48C00012048F /* KWPassthroughView.swift */,
-				52216659253D48C00012048F /* Localizable.strings */,
-				5221665C253D48C00012048F /* KWWindow.swift */,
-				5221665E253D48C00012048F /* NSObject+Associated.swift */,
-				5221665F253D48C00012048F /* KWLazyPresentSwift.h */,
-				52216660253D48C00012048F /* UIViewController+KWLazyPresent.swift */,
 				52216661253D48C00012048F /* Info.plist */,
+				5221665F253D48C00012048F /* KWLazyPresentSwift.h */,
+				52216658253D48C00012048F /* KWPassthroughView.swift */,
+				52216660253D48C00012048F /* UIViewController+KWLazyPresent.swift */,
+				5221665C253D48C00012048F /* KWWindow.swift */,
+				52216659253D48C00012048F /* Localizable.strings */,
+				5221665E253D48C00012048F /* NSObject+Associated.swift */,
 			);
 			path = KWLazyPresentSwift;
 			sourceTree = "<group>";
