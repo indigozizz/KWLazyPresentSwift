@@ -149,9 +149,30 @@ class ViewController: UIViewController {
         viewController.modalPresentationStyle = .overCurrentContext
         
         viewController.kw_linkLifeCycleWith(viewController: self)
+        
+        //Default
         viewController.lazyPresent(animated: true) {
             print("lazyPresentCompletion")
         }
+        
+        
+//        //Custom Animation #1
+//        let transition = CATransition()
+//        transition.duration = 0.5
+//        transition.type = CATransitionType.push
+//        transition.subtype = CATransitionSubtype.fromRight
+//        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+//        view.window!.layer.add(transition, forKey: kCATransition)
+//        viewController.lazyPresent(transition: transition, animated: false) {
+//            print("lazyPresentCompletion")
+//        }
+
+        
+//        //Custom Animation #2
+//        viewController.modalTransitionStyle = .flipHorizontal
+//        viewController.lazyPresent(animated: true) {
+//            print("lazyPresentCompletion")
+//        }
     }
     
     @objc func dismissButtonClick()

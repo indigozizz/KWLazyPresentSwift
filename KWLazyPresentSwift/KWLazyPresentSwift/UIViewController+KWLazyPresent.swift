@@ -75,8 +75,7 @@ extension UIViewController {
         self.kwLinkedViewController = nil
     }
     
-    
-    public func lazyPresent(animated: Bool = true, alertType: KWLazyPresentType = .defaultStyle, completion: completion? = nil) {
+    public func lazyPresent(transition: CAAnimation? = nil, animated: Bool = true, alertType: KWLazyPresentType = .defaultStyle, completion: completion? = nil) {
         
         var window: UIWindow?
         
@@ -124,7 +123,13 @@ extension UIViewController {
         }
         
         self.kwPresentWindow?.makeKeyAndVisible()
+        
+        if let transition = transition {
+            self.kwPresentWindow?.rootViewController?.view.window!.layer.add(transition, forKey: kCATransition)
+        }
+        
         self.kwPresentWindow?.rootViewController?.present(self, animated: animated, completion: completion)
+        
     }
     
     public func lazyDismiss(tag: NSInteger, animtaion:Bool = false) -> Bool {
