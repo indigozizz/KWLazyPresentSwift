@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "KWLazyPresentSwift"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
   spec.summary      = "Present a UIViewController more easily and conveniently."
 
   spec.swift_version = "5"

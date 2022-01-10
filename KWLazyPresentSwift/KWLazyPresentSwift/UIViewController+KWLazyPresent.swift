@@ -9,6 +9,7 @@ import UIKit
 
 public enum KWLazyPresentType {
     case defaultStyle
+    case loadingView
     case inAppNotification
 }
 
@@ -130,6 +131,9 @@ extension UIViewController {
         case .inAppNotification:
             self.kwPresentWindow?.windowLevel = UIWindow.Level.alert - 1
             
+        case .loadingView:
+            self.kwPresentWindow?.windowLevel = UIWindow.Level.alert - 2
+            
         case .defaultStyle:
             self.kwPresentWindow?.windowLevel = kwGetSuitableWindowLevel()
         }
@@ -188,18 +192,34 @@ extension UIViewController {
     }
     
     fileprivate func kwGetSuitableWindowLevel() -> UIWindow.Level {
-        
-        let notificationLevel = UIWindow.Level.alert - 1
-        var windowLevel = notificationLevel - 1
+        let loadingViewLevel = UIWindow.Level.alert - 2
+        var windowLevel = loadingViewLevel - 1
+
+        var maxWindowLevel: UIWindow.Level = UIWindow.Level(0.0)
         
         for window in (UIApplication.shared.windows).reversed() {
-            
-            if (window.windowLevel >= notificationLevel - 1) {
+
+            if (window.windowLevel >= loadingViewLevel - 1) {
                 continue
             }
             
-            windowLevel = window.windowLevel + 1;
+            let level = window.windowLevel
+            
+            if (maxWindowLevel < level) {
+                maxWindowLevel = level
+            }
+            
+            //if ([window isKindOfClass:[KWWindow class]]) {
+            if (window.isKind(of: KWWindow.self)) {
+                print("===> [\(window.windowLevel.rawValue) - \((window as! KWWindow).kwLazyTag)]")
+            }
+            else {
+                print("===> [\(window.windowLevel.rawValue) - \(window.tag)]")
+            }
+
         }
+        
+        windowLevel = maxWindowLevel + 1;
         
         return windowLevel
     }
