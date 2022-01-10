@@ -21,6 +21,7 @@ extension UIViewController {
         static var kwPresentWindow = "kwPresentWindow"
         static var kwLinkedViewController = "kwLinkedViewController"
         static var tag = "tag"
+        static var dismissDuration = "dismissDuration"
     }
     
     var kwPresentWindow: KWWindow? {
@@ -49,6 +50,17 @@ extension UIViewController {
         set {
             let tagNumber = NSNumber.init(value: newValue ?? 0)
             setAssociated(value: tagNumber, associatedKey: &AssociatedKeys.tag)
+        }
+    }
+    
+    public var dismissDuration: Double {
+        get {
+            let dismissDuration = objc_getAssociatedObject(self, &AssociatedKeys.dismissDuration) as? NSNumber
+            return dismissDuration?.doubleValue ?? 0.0
+        }
+        set {
+            let dismissDuration = Double.init(newValue)
+            setAssociated(value: dismissDuration, associatedKey: &AssociatedKeys.dismissDuration)
         }
     }
 }
@@ -134,6 +146,13 @@ extension UIViewController {
     
     public func lazyDismiss(tag: NSInteger, animtaion:Bool = false) -> Bool {
         if let viewController = self.kwViewControllerWithTag(tag) {
+            
+            let layer = viewController.view.window?.layer
+            if let layer = layer {
+                let animationKey = (layer.animationKeys()?.first as String?) ?? ""
+                viewController.dismissDuration = layer.animation(forKey: animationKey)?.duration ?? 0.0
+            }
+
             viewController.dismiss(animated: animtaion, completion: {})
             return true
         }

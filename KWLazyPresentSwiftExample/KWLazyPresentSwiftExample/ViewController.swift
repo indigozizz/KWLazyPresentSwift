@@ -162,7 +162,6 @@ class ViewController: UIViewController {
 //        transition.type = CATransitionType.push
 //        transition.subtype = CATransitionSubtype.fromRight
 //        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-//        view.window!.layer.add(transition, forKey: kCATransition)
 //        viewController.lazyPresent(transition: transition, animated: false) {
 //            print("lazyPresentCompletion")
 //        }
@@ -180,6 +179,15 @@ class ViewController: UIViewController {
         //self.lazyDismiss(animated: true) {
         //    print("lazyDismissCompletion")
         //}
+        
+//        //Dismiss Animation
+//        let transition = CATransition()
+//        transition.duration = 0.5
+//        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+//        transition.type = CATransitionType.push
+//        transition.subtype = CATransitionSubtype.fromLeft
+//        self.view.window!.layer.add(transition, forKey: nil)
+        
         let _ = self.lazyDismiss(tag: NSInteger(windowTagStepper.value))
     }
     

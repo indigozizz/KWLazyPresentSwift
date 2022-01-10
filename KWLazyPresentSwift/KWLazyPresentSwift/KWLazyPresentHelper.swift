@@ -64,7 +64,17 @@ public class KWLazyPresentHelper {
 //            return
 //        }
         if let viewController = notification.object as? UIViewController {
-            releaseLazyWindow(viewController: viewController)
+            let duration = viewController.dismissDuration
+            
+            if (duration > 0) {
+                viewController.dismissDuration = -1.0
+                DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+                    self.releaseLazyWindow(viewController: viewController)
+                }
+            }
+            else if (duration == 0) {
+                releaseLazyWindow(viewController: viewController)
+            }
         }
     }
     
