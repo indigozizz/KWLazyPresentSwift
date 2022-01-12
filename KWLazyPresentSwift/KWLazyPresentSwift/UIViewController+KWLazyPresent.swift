@@ -11,6 +11,7 @@ public enum KWLazyPresentType {
     case defaultStyle
     case loadingView
     case inAppNotification
+    case custom
 }
 
 public typealias completion = () -> Void
@@ -88,7 +89,7 @@ extension UIViewController {
         self.kwLinkedViewController = nil
     }
     
-    public func lazyPresent(transition: CAAnimation? = nil, animated: Bool = true, alertType: KWLazyPresentType = .defaultStyle, completion: completion? = nil) {
+    public func lazyPresent(transition: CAAnimation? = nil, animated: Bool = true, level: CGFloat = -1.0, alertType: KWLazyPresentType = .defaultStyle, completion: completion? = nil) {
         
         var window: UIWindow?
         
@@ -126,8 +127,16 @@ extension UIViewController {
             self.kwPresentWindow?.tintColor = window.tintColor
         }
         
+        var newAlertType = alertType
+        var newLevel = level
+        if (newLevel >= 0) {
+            newAlertType = .custom
+        }
+        else {
+            newLevel = 0.0
+        }
         
-        switch alertType {
+        switch newAlertType {
         case .inAppNotification:
             self.kwPresentWindow?.windowLevel = UIWindow.Level.alert - 1
             
@@ -136,6 +145,9 @@ extension UIViewController {
             
         case .defaultStyle:
             self.kwPresentWindow?.windowLevel = kwGetSuitableWindowLevel()
+            
+        case .custom:
+            self.kwPresentWindow?.windowLevel = UIWindow.Level(newLevel)
         }
         
         self.kwPresentWindow?.makeKeyAndVisible()
@@ -146,35 +158,84 @@ extension UIViewController {
         
         self.kwPresentWindow?.rootViewController?.present(self, animated: animated, completion: completion)
         
+        showWindowsList()
+        
     }
     
-    public func lazyDismiss(tag: NSInteger, animtaion:Bool = false) -> Bool {
-        if let viewController = self.kwViewControllerWithTag(tag) {
-            
-            let layer = viewController.view.window?.layer
-            if let layer = layer {
-                let animationKey = (layer.animationKeys()?.first as String?) ?? ""
-                viewController.dismissDuration = layer.animation(forKey: animationKey)?.duration ?? 0.0
-            }
-
-            viewController.dismiss(animated: animtaion, completion: {})
+    public func lazyDismiss(tag: NSInteger = -1, animtaion:Bool = true, completion: completion? = nil) {
+    
+        var viewController: UIViewController?
+        viewController = (tag >= 0) ? self.kwViewControllerWithTag(tag) : self
+        
+        if let viewController = viewController {
+            let _ = self.setDismissDuration(viewController)
+            viewController.dismiss(animated: animtaion, completion: completion)
+        }
+        
+        showWindowsList()
+    }
+    
+//    public func lazyDismiss(tag: NSInteger, animtaion:Bool = false) -> Bool {
+//        if let viewController = self.kwViewControllerWithTag(tag) {
+//
+//            let _ = self.setDismissDuration(viewController)
+////            let layer = viewController.view.window?.layer
+////            if let layer = layer {
+////                let animationKey = (layer.animationKeys()?.first as String?) ?? ""
+////                viewController.dismissDuration = layer.animation(forKey: animationKey)?.duration ?? 0.0
+////            }
+//
+//            viewController.dismiss(animated: animtaion, completion: {})
+//            return true
+//        }
+//        return false
+//    }
+//
+//    //@available(*, deprecated, renamed: "loadData")
+//    @available(*, deprecated, renamed: "dismiss(animated:completion:)")
+//    public func lazyDismiss(animated: Bool = true, completion: completion? = nil) {
+//
+//        let _ = self.setDismissDuration(self)
+//
+//        self.dismiss(animated: animated) {
+//            self.kwPresentWindow?.isHidden = true
+//            self.kwPresentWindow = nil
+//
+//            if let completion = completion {
+//                completion()
+//            }
+//        }
+//    }
+    
+    private func setDismissDuration(_ viewController: UIViewController) -> Bool {
+        let layer = viewController.view.window?.layer
+        if let layer = layer {
+            let animationKey = (layer.animationKeys()?.first as String?) ?? ""
+            viewController.dismissDuration = layer.animation(forKey: animationKey)?.duration ?? 0.0
             return true
         }
-        return false
+        else {
+            return false
+        }
     }
     
-    //@available(*, deprecated, renamed: "loadData")
-    @available(*, deprecated, renamed: "dismiss(animated:completion:)")
-    public func lazyDismiss(animated: Bool = true, completion: completion? = nil) {
-
-        self.dismiss(animated: animated) {
-            self.kwPresentWindow?.isHidden = true
-            self.kwPresentWindow = nil
-
-            if let completion = completion {
-                completion()
+    private func showWindowsList() {
+        
+//        let i = (UIApplication.shared.windows).reversed()
+        print("=====")
+        for window in (UIApplication.shared.windows).reversed() {
+            
+            //if ([window isKindOfClass:[KWWindow class]]) {
+            if (window.isKind(of: KWWindow.self)) {
+                print("===>level: \(window.windowLevel.rawValue), tag \((window as! KWWindow).kwLazyTag), \(window)")
             }
+            else {
+                print("===>level: \(window.windowLevel.rawValue), tag \(window.tag), \(window)")
+            }
+
+            print("")
         }
+        print("=====")
     }
     
 }

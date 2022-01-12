@@ -8,7 +8,7 @@
 import UIKit
 import KWLazyPresentSwift
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     let windowCountLabel = UILabel()
     let notificationButton = UIButton.init(type: .system)
@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     let dismissButton = UIButton.init(type: .system)
     let logButton = UIButton.init(type: .system)
     let windowTagStepper = UIStepper()
+    
+    let levelTextField = UITextField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,12 @@ class ViewController: UIViewController {
     func layoutInitialize() {
         self.view.backgroundColor = UIColor.random()
         let count = UIApplication.shared.windows.count
+        
+        levelTextField.frame = CGRect(x: 0, y: 0, width: 60, height: 30)
+        levelTextField.borderStyle = .roundedRect
+        levelTextField.keyboardType = .decimalPad
+        levelTextField.returnKeyType = .done
+        levelTextField.delegate = self
         
         windowTagStepper.minimumValue = 1
         windowTagStepper.value = Double(count)
@@ -116,6 +124,11 @@ class ViewController: UIViewController {
             x: dismissButton.frame.maxX + windowTagStepper.frame.width / 2 + 5,
             y: dismissButton.center.y)
         
+        
+        levelTextField.center = CGPoint(
+            x: showButton.frame.maxX + levelTextField.frame.width / 2 + 5,
+            y: showButton.center.y)
+        
         self.view.addSubview(windowCountLabel)
         self.view.addSubview(notificationButton)
         self.view.addSubview(alertButton)
@@ -124,6 +137,8 @@ class ViewController: UIViewController {
         self.view.addSubview(logButton)
         
         self.view.addSubview(windowTagStepper)
+        self.view.addSubview(levelTextField)
+
     }
     
     @objc func notificationButtonClick()
@@ -143,6 +158,8 @@ class ViewController: UIViewController {
     
     @objc func showButtonClick()
     {
+        levelTextField.resignFirstResponder()
+        
         let viewController = ViewController()
         viewController.tag = UIApplication.shared.windows.count + 1
         
@@ -151,11 +168,19 @@ class ViewController: UIViewController {
         viewController.kw_linkLifeCycleWith(viewController: self)
         
         //Default
-        viewController.lazyPresent(animated: true) {
-            print("lazyPresentCompletion")
+        let levelString = levelTextField.text ?? "0.0"
+        let level = Double(levelString) ?? 0.0
+        
+        if level > 0 {
+            viewController.lazyPresent(animated: true, level: level)
+            
         }
-        
-        
+        else {
+            viewController.lazyPresent(animated: true) {
+                print("lazyPresentCompletion")
+            }
+        }
+
 //        //Custom Animation #1
 //        let transition = CATransition()
 //        transition.duration = 0.5
@@ -198,6 +223,11 @@ class ViewController: UIViewController {
     
     @objc func windowTagStepperChanged(_ sender: UIStepper) {
         self.dismissButton.setTitle(dismissTitleWithIndex(index: Int(sender.value)), for: .normal)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
